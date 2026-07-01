@@ -1,6 +1,6 @@
 # Employee Workforce Analytics Report
 
-**A comprehensive analysis of 1,020 employee records — from messy raw data to actionable business intelligence.**
+**1,020 employee records, cleaned and analyzed to see whether pay actually lines up with performance.**
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Project Overview
 
-This project started with a real-world messy employee dataset pulled straight out of an HR system — inconsistent types, missing values, useless columns, the works.
+This project started with a real-world messy employee dataset pulled straight out of an HR system: inconsistent types, missing values, useless columns, the works.
 
 The goal was simple: **clean it, understand it, and pull out insights that actually matter.**
 
@@ -35,7 +35,7 @@ No fancy ML models, no over-engineering. Just solid data cleaning, thoughtful ex
 **What was done:**
 
 1. Identified and handled missing values using statistically sound imputation (grouped medians, not blind averages)
-2. Fixed data types — dates stored as strings, salary as floats, age with decimal noise
+2. Fixed data types: dates stored as strings, salary as floats, age with decimal noise
 3. Dropped irrelevant columns that added zero analytical value
 4. Ran targeted EDA focusing on salary distribution, performance-salary relationships, and department-level patterns
 5. Built visualizations that surface the story behind the numbers
@@ -79,13 +79,13 @@ The raw dataset had several problems that needed attention before any analysis c
 
 ### How It Was Handled
 
-**Age** — Missing values were filled using the **median age grouped by department-region**. Not a flat median across the board — grouped so that if DevOps-California skews younger and Finance-Texas skews older, the imputation respects that. Histogram and box plot were checked first to confirm the distribution before choosing median over mean.
+**Age**: Missing values were filled using the **median age grouped by department-region**. Not a flat median across the board, but grouped so that if DevOps-California skews younger and Finance-Texas skews older, the imputation respects that. Histogram and box plot were checked first to confirm the distribution before choosing median over mean.
 
-**Salary** — Same approach. Grouped by department-region, then filled with the group median. This matters because a missing salary in HR-Florida shouldn't be filled with the overall company average when that department might pay differently.
+**Salary**: Same approach. Grouped by department-region, then filled with the group median. This matters because a missing salary in HR-Florida shouldn't be filled with the overall company average when that department might pay differently.
 
-**Join_Date** — Converted from raw string format (`"4/2/2021"`) to proper pandas datetime for any time-based analysis.
+**Join_Date**: Converted from raw string format (`"4/2/2021"`) to proper pandas datetime for any time-based analysis.
 
-**Email & Phone** — Both dropped. Email had no analytical value. Phone numbers were corrupted (negative values like `-1651623197`), clearly bad data, so they were removed rather than guessed at.
+**Email & Phone**: Both dropped. Email had no analytical value. Phone numbers were corrupted (negative values like `-1651623197`), clearly bad data, so they were removed rather than guessed at.
 
 **After cleaning: zero null values across all 10 columns.** Clean dataset, no compromises.
 
@@ -116,7 +116,7 @@ The workforce was split based on the average salary threshold of **$85,172**.
 | **Above Average** | 517 | 50.7% |
 | **Below Average** | 503 | 49.3% |
 
-Almost a perfect 50/50 split. This further confirms the balanced distribution — the company isn't top-heavy or bottom-heavy in compensation.
+Almost a perfect 50/50 split. This further confirms the balanced distribution: the company isn't top-heavy or bottom-heavy in compensation.
 
 ![Above vs Below Average Salary](Above%20vs%20Below%20Average%20Salary.png)
 
@@ -141,7 +141,7 @@ Almost a perfect 50/50 split. This further confirms the balanced distribution �
 | Sales-Nevada | 20 |
 | DevOps-California | 19 |
 
-A few patterns here — **Florida-based departments show up on both sides**, which suggests salary variance within the state rather than a uniform pay structure. **Finance-Illinois** stands out as having the highest concentration of below-average earners.
+A few patterns here. **Florida-based departments show up on both sides**, which suggests salary variance within the state rather than a uniform pay structure. **Finance-Illinois** stands out as having the highest concentration of below-average earners.
 
 **Age breakdown of above-average earners:**
 
@@ -153,7 +153,7 @@ A few patterns here — **Florida-based departments show up on both sides**, whi
 | 25 | 99 |
 | 32 | 13 |
 
-Employees aged **30** dominate the above-average salary bracket. The 25-year-old group has the smallest representation up top, which makes sense — they're likely early in their careers.
+Employees aged **30** dominate the above-average salary bracket. The 25-year-old group has the smallest representation up top, which makes sense, as they're likely early in their careers.
 
 ---
 
@@ -171,7 +171,7 @@ Employees aged **30** dominate the above-average salary bracket. The 25-year-old
 
 ![Top 7 High Salary Earners](Top%207%20high%20salary%20earners.png)
 
-Something worth noting — **6 out of the top 7 earners have an "Average" performance score**, not "Excellent." And 5 of them are 30 years old. The highest paid employee in the company (Charlie Smith, $119,971) is rated Average and currently Inactive. That raises questions about whether compensation is truly tied to performance, or if there are other factors driving pay at the top.
+Something worth noting that **6 out of the top 7 earners have an "Average" performance score**, not "Excellent." And 5 of them are 30 years old. The highest paid employee in the company (Charlie Smith, $119,971) is rated Average and currently Inactive. That raises questions about whether compensation is truly tied to performance, or if there are other factors driving pay at the top.
 
 ---
 
@@ -189,13 +189,13 @@ Something worth noting — **6 out of the top 7 earners have an "Average" perfor
 
 ![Top 7 Low Salary Earners](Top%207%20low%20salary%20earners.png)
 
-Interesting — the lowest earners aren't all young employees. Ages range from 25 to 40. Alice Garcia (#6) has an **Excellent performance score** but earns just $50,288 — she's one of the lowest paid people in the entire company despite being a top performer. That's a retention risk flag right there.
+Interestingly, the lowest earners aren't all young employees. Ages range from 25 to 40. Alice Garcia (#6) has an **Excellent performance score** but earns just $50,288. She's one of the lowest paid people in the entire company despite being a top performer. That's a retention risk flag right there.
 
 ---
 
 ## Salary vs Performance Deep Dive
 
-This is where it gets interesting. The dataset has **216 employees rated "Poor"** out of 1,020 total — that's roughly **21% of the workforce**.
+This is where it gets interesting. The dataset has **216 employees rated "Poor"** out of 1,020 total. That's roughly **21% of the workforce**.
 
 The analysis below breaks down salary extremes within performance tiers to answer a simple question: **does pay match performance here?**
 
@@ -203,7 +203,7 @@ The analysis below breaks down salary extremes within performance tiers to answe
 
 ### High Earners with Excellent Performance
 
-These are the employees doing it right — top performance, top pay.
+These are the employees doing it right: top performance, top pay.
 
 | Rank | Name | Salary | Age | Department | Status | Remote |
 |------|------|--------|-----|------------|--------|--------|
@@ -217,7 +217,7 @@ These are the employees doing it right — top performance, top pay.
 
 ![Top 7 High Earners - Excellent Performance](Top%207%20high%20earners%20%28Performance%20%3D%20Excellent%29.png)
 
-Salaries range from **$117,870 to $119,407**. These are people earning near the company maximum and delivering excellent results. Worth noting — **5 out of 7 are remote workers**, and ages are clustered between 30–35. However, 4 out of 7 are **Inactive**, which is a concern. If your best-performing, highest-paid employees are leaving, that's a serious business problem.
+Salaries range from **$117,870 to $119,407**. These are people earning near the company maximum and delivering excellent results. Worth noting that **5 out of 7 are remote workers**, and ages are clustered between 30–35. However, 4 out of 7 are **Inactive**, which is a concern. If your best-performing, highest-paid employees are leaving, that's a serious business problem.
 
 ---
 
@@ -237,15 +237,15 @@ This is the red flag group. High salary, low output.
 
 ![Top 7 High Earners - Poor Performance](Top%207%20high%20earners%20%28Performance%20%3D%20Poor%29.png)
 
-These 7 employees earn between **$118,413 and $119,389** — nearly the same range as the excellent performers. Charlie Miller earns $119,389 with a Poor rating; Alice Miller (Excellent) earns $119,407. That's an **$18 difference** for vastly different performance levels. 
+These 7 employees earn between **$118,413 and $119,389**: nearly the same range as the excellent performers. Charlie Miller earns $119,389 with a Poor rating; Alice Miller (Excellent) earns $119,407. That's an **$18 difference** for vastly different performance levels. 
 
-Also notable: **5 out of 7 are not working remotely**, and 4 out of 7 are aged 40 — the oldest bracket in the dataset. This suggests the compensation structure may be rewarding tenure or seniority rather than actual output.
+Also notable: **5 out of 7 are not working remotely**, and 4 out of 7 are aged 40 (the oldest bracket in the dataset). This suggests the compensation structure may be rewarding tenure or seniority rather than actual output.
 
 ---
 
 ### Low Earners with Excellent Performance
 
-These are the **undervalued employees** — delivering excellent work but sitting at the very bottom of the pay scale.
+These are the **undervalued employees**: delivering excellent work but sitting at the very bottom of the pay scale.
 
 | Rank | Name | Salary | Age | Department | Status | Remote |
 |------|------|--------|-----|------------|--------|--------|
@@ -259,9 +259,9 @@ These are the **undervalued employees** — delivering excellent work but sittin
 
 ![Top 7 Low Earners - Excellent Performance](Top%207%20low%20earners%20%28Performance%20%3D%20Excellent%29.png)
 
-These employees earn between **$50,288 and $51,939** while consistently rated Excellent. Alice Garcia brings in $50,288 — compare that to Charlie Miller (Poor) earning $119,389. That's a **$69,101 gap** between a top performer and a bottom performer.
+These employees earn between **$50,288 and $51,939** while consistently rated Excellent. Alice Garcia brings in $50,288. Compare that to Charlie Miller (Poor) earning $119,389. That's a **$69,101 gap** between a top performer and a bottom performer.
 
-4 out of 7 here are **25 years old**, which might explain the lower salary as entry-level positioning — but performance ratings don't care about age. If someone's delivering Excellent results, they should be compensated accordingly. This group represents the **highest retention risk** in the organization.
+4 out of 7 here are **25 years old**, which might explain the lower salary as entry-level positioning, but performance ratings don't care about age. If someone's delivering Excellent results, they should be compensated accordingly. This group represents the **highest retention risk** in the organization.
 
 ---
 
@@ -279,7 +279,7 @@ These employees earn between **$50,288 and $51,939** while consistently rated Ex
 
 ![Top 7 Low Earners - Poor Performance](Top%207%20low%20earners%20%28Performance%20%3D%20Poor%29.png)
 
-Low pay, low performance. This group is where it lines up — salary reflects output. The concerning pattern is that **5 out of 7 are not remote workers**, and the statuses lean heavily toward Inactive/Pending rather than Active. These may be employees who were already on their way out.
+Low pay, low performance. This group is where it lines up: salary reflects output. The concerning pattern is that **5 out of 7 are not remote workers**, and the statuses lean heavily toward Inactive/Pending rather than Active. These may be employees who were already on their way out.
 
 ---
 
@@ -289,7 +289,7 @@ Low pay, low performance. This group is where it lines up — salary reflects ou
 The most critical finding. Employees rated "Poor" earn almost identical salaries to those rated "Excellent" at the top end (~$119K for both). The pay-for-performance model appears broken, or it doesn't exist at all.
 
 ### 2. High-Performing, Low-Paid Employees Are a Retention Risk
-7 employees rated Excellent earn between $50K–$52K. These are people delivering top results at bottom-tier pay. If compensation isn't corrected, the company risks losing its best talent — especially Alice Garcia ($50,288, Excellent, Active).
+7 employees rated Excellent earn between $50K–$52K. These are people delivering top results at bottom-tier pay. If compensation isn't corrected, the company risks losing its best talent, especially Alice Garcia ($50,288, Excellent, Active).
 
 ### 3. 21% of the Workforce Is Rated "Poor"
 216 out of 1,020 employees carry a Poor performance score. That's over one-fifth of the workforce. Combined with the fact that some of these employees are among the highest paid, this suggests a need for performance-based compensation reviews.
@@ -304,7 +304,7 @@ Among high earners with Excellent performance, 5 out of 7 work remotely. Among h
 These two states appear across both the highest and lowest salary brackets, the best and worst performers. They likely represent the company's largest regional hubs and may need localized compensation strategies.
 
 ### 7. Inactive Status Among Top Performers Is Alarming
-4 out of 7 highest-paid Excellent performers are Inactive. If the company's best people are leaving despite good pay, the problem goes beyond compensation — it could be culture, growth opportunities, or management.
+4 out of 7 highest-paid Excellent performers are Inactive. If the company's best people are leaving despite good pay, the problem goes beyond compensation; it could be culture, growth opportunities, or management.
 
 ---
 
