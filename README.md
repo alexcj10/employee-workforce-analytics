@@ -118,7 +118,7 @@ The workforce was split based on the average salary threshold of **$85,172**.
 
 Almost a perfect 50/50 split. This further confirms the balanced distribution: the company isn't top-heavy or bottom-heavy in compensation.
 
-![Above vs Below Average Salary](Above%20vs%20Below%20Average%20Salary.png)
+![Above vs Below Average Salary](images/Above%20vs%20Below%20Average%20Salary.png)
 
 **Top departments with above-average earners:**
 
@@ -169,7 +169,7 @@ Employees aged **30** dominate the above-average salary bracket. The 25-year-old
 | 6 | Alice Brown | $119,574 | 30 | Admin-Illinois | Inactive | Average |
 | 7 | Alice Miller | $119,407 | 30 | Sales-Florida | Inactive | Excellent |
 
-![Top 7 High Salary Earners](Top%207%20high%20salary%20earners.png)
+![Top 7 High Salary Earners](images/Top%207%20high%20salary%20earners.png)
 
 Something worth noting that **6 out of the top 7 earners have an "Average" performance score**, not "Excellent." And 5 of them are 30 years old. The highest paid employee in the company (Charlie Smith, $119,971) is rated Average and currently Inactive. That raises questions about whether compensation is truly tied to performance, or if there are other factors driving pay at the top.
 
@@ -187,7 +187,7 @@ Something worth noting that **6 out of the top 7 earners have an "Average" perfo
 | 6 | Alice Garcia | $50,288 | 35 | Sales-New York | Active | Excellent |
 | 7 | Grace Smith | $50,300 | 40 | Admin-Florida | Inactive | Good |
 
-![Top 7 Low Salary Earners](Top%207%20low%20salary%20earners.png)
+![Top 7 Low Salary Earners](images/Top%207%20low%20salary%20earners.png)
 
 Interestingly, the lowest earners aren't all young employees. Ages range from 25 to 40. Alice Garcia (#6) has an **Excellent performance score** but earns just $50,288. She's one of the lowest paid people in the entire company despite being a top performer. That's a retention risk flag right there.
 
@@ -215,7 +215,7 @@ These are the employees doing it right: top performance, top pay.
 | 6 | Eva Jones | $118,030 | 32 | Admin-Florida | Inactive | Yes |
 | 7 | David Jones | $117,870 | 35 | DevOps-Texas | Inactive | No |
 
-![Top 7 High Earners - Excellent Performance](Top%207%20high%20earners%20%28Performance%20%3D%20Excellent%29.png)
+![Top 7 High Earners - Excellent Performance](images/Top%207%20high%20earners%20%28Performance%20%3D%20Excellent%29.png)
 
 Salaries range from **$117,870 to $119,407**. These are people earning near the company maximum and delivering excellent results. Worth noting that **5 out of 7 are remote workers**, and ages are clustered between 30–35. However, 4 out of 7 are **Inactive**, which is a concern. If your best-performing, highest-paid employees are leaving, that's a serious business problem.
 
@@ -235,7 +235,7 @@ This is the red flag group. High salary, low output.
 | 6 | Alice Williams | $118,672 | 40 | Finance-Texas | Pending | No |
 | 7 | Bob Garcia | $118,413 | 40 | Finance-Nevada | Inactive | No |
 
-![Top 7 High Earners - Poor Performance](Top%207%20high%20earners%20%28Performance%20%3D%20Poor%29.png)
+![Top 7 High Earners - Poor Performance](images/Top%207%20high%20earners%20%28Performance%20%3D%20Poor%29.png)
 
 These 7 employees earn between **$118,413 and $119,389**: nearly the same range as the excellent performers. Charlie Miller earns $119,389 with a Poor rating; Alice Miller (Excellent) earns $119,407. That's an **$18 difference** for vastly different performance levels. 
 
@@ -257,7 +257,7 @@ These are the **undervalued employees**: delivering excellent work but sitting a
 | 6 | Frank Smith | $51,311 | 25 | Finance-Nevada | Active | No |
 | 7 | David Smith | $51,939 | 40 | Admin-Texas | Active | Yes |
 
-![Top 7 Low Earners - Excellent Performance](Top%207%20low%20earners%20%28Performance%20%3D%20Excellent%29.png)
+![Top 7 Low Earners - Excellent Performance](images/Top%207%20low%20earners%20%28Performance%20%3D%20Excellent%29.png)
 
 These employees earn between **$50,288 and $51,939** while consistently rated Excellent. Alice Garcia brings in $50,288. Compare that to Charlie Miller (Poor) earning $119,389. That's a **$69,101 gap** between a top performer and a bottom performer.
 
@@ -277,7 +277,7 @@ These employees earn between **$50,288 and $51,939** while consistently rated Ex
 | 6 | Grace Davis | $51,865 | 30 | HR-Nevada | Pending | Yes |
 | 7 | Alice Miller | $52,289 | 25 | Finance-Nevada | Inactive | Yes |
 
-![Top 7 Low Earners - Poor Performance](Top%207%20low%20earners%20%28Performance%20%3D%20Poor%29.png)
+![Top 7 Low Earners - Poor Performance](images/Top%207%20low%20earners%20%28Performance%20%3D%20Poor%29.png)
 
 Low pay, low performance. This group is where it lines up: salary reflects output. The concerning pattern is that **5 out of 7 are not remote workers**, and the statuses lean heavily toward Inactive/Pending rather than Active. These may be employees who were already on their way out.
 
